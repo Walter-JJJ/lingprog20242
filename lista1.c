@@ -65,27 +65,79 @@ void q7 (){
 
 //8. Faça um programa que leia dois números inteiros e imprima a
 //   subtração deles.
+void q8 (){
+    int num1=0, num2=0, sub=0;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &num1);
+    printf("Digite outro número inteiro: ");
+    scanf("%d", &num2);
+    sub=num1-num2;
+    printf("A subtração entre o primeiro e o segundo número digitado é %d\n", sub);
+}
 
 //9. Faça um programa que leia umnúmero real e imprima ¼ deste número.
+void q9 (){
+    float num=0, parte=0;
+    printf("Digite um número real: ");
+    scanf("%f", &num);
+    parte=num/4;
+    printf("A quarta parte do número digitado é %.2f\n", parte);
+}
 
 //10. Faça um programa que leia três números reais e calcule a
 //    média aritmética destes números. Ao final, o programa deve
 //    imprimir o resultado do cálculo.
+void q10 (){
+    float num1=0, num2=0, num3=0, media=0;
+    printf("Digite 3 numeros: ");
+    scanf("%f%f%f", &num1, &num2, &num3);
+    media=(num1+num2+num3)/3;
+    printf("A media aritmetica entre os 3 números é: %.2f\n", media);
+}
 
 //11. Faça um programa que leia dois números reais e calcule as
 //    quatro operações básicas entre estes dois números, adição,
 //    subtração,multiplicação e divisão. Ao final, o programa
 //    deve imprimir os resultados dos cálculos.
+void q11 (){
+    float num1=0, num2=0, ad=0, sub=0, mul=0, div=0;
+    printf("Digite dois número reais: ");
+    scanf("%f%f", &num1, &num2);
+    ad=(num1+num2); sub=(num1-num2); mul=(num1*num2); div=(num1/num2);
+    printf("Soma: %.2f\nDiferença: %.2f\nProduto: %.2f\nQuociente: %.2f\n", ad, sub, mul, div);
+}
 
 //12. Faça um programa que leia um número real e calcule o
 //    quadrado deste número. Ao final, o programa deve
 //    imprimir o resultado do cálculo.
+void q12 (){
+    float num=0, quad=0;
+    printf("Digite um número real: ");
+    scanf("%f", &num);
+    quad=num*num;
+    printf("O quadrado do número digitade é: %.f\n", quad);
+}
 
 //13. Faça um programa que leia o saldo de uma conta poupança e
 //    imprima o novo saldo, considerando um reajuste de 2%.
+void q13 (){
+    float saldo=0, reajuste=0;
+    printf("Digite o saldo da conta: ");
+    scanf("%f", &saldo);
+    reajuste= (saldo*1.02);
+    printf("O novo saldo após reajuste é: %.2f\n", reajuste);
+}
 
 //14. Faça um programa que leia a base e a altura de um retângulo
 //    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).
+void q14 (){
+    int base=0, alt=0, per=0, area=0;
+    printf("Digite a base e a altura do retangulo: ");
+    scanf("%d%d", &base, &alt);
+    per=(base*2+alt*2); area=(base*alt);
+    printf("Perimetro: %f\nArea: %f\n", per, area);
+
+}
 
 //15. Faça um programa que leia o valor de um produto, o percentual
 //    do desconto desejado e imprima o valor do desconto e o valor
@@ -127,6 +179,6 @@ void q7 (){
 //    necessário também ler o valor da cotação do dólar.
 
 int main() {
-    q6();
+    q14();
     return EXIT_SUCCESS;
 }
