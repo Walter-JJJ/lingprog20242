@@ -241,8 +241,28 @@ void questao12() {
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
 //prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
 void questao13() {
-    
-	
+    char nome[50];
+    float nota1, nota2, media;
+    printf("Digite seu nome ");
+    scanf("%s", &nome);
+    printf("Digite a nota da prova 1: ");
+    scanf("%f", &nota1);
+    printf("Digite a nota da prova 2: ");
+    scanf("%f", &nota2);
+    media=(nota1+nota2)/2;
+    system("clear");
+    if (media>=7){
+        printf("%s\n%.2f\n%.2f\n%.2f\n", nome, nota1, nota2, media);
+        printf("Aprovado\n");
+    }
+    if (media<7 && media>=3){
+        printf("%s\n%.2f\n%.2f\n%.2f\n", nome, nota1, nota2, media);
+        printf("Prova Final\n");
+    }
+    if (media<3){
+        printf("%s\n%.2f\n%.2f\n%.2f\n", nome, nota1, nota2, media);
+        printf("Reprovado\n");
+    }
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
@@ -253,13 +273,40 @@ void questao13() {
 //Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 //Maior que R$2000,00 30%
 void questao14() {
-	
+    float sal, desc;
+    printf("Digite seu salário: ");
+    scanf("%f", &sal);
+    if (sal<=600){
+        printf("Isento\n");
+    }else {
+        if (sal>600 && sal<=1200) {
+            desc=sal*0.2;
+            printf("O desconto será de %.2f reais\n", desc);
+        } else {
+        if (sal>1200 && sal<=2000){
+            desc=sal*0.25;
+            printf("O desconto será de %.2f reais\n", desc);
+        } else {
+            desc=sal*0.3;
+            printf("O desconto será de %.2f reais\n", desc);
+        }
+        }
+    }
 }
 
 //15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
 //da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
 void questao15() {
-	
+    float vp, vv;
+    printf("Valor do produto: ");
+    scanf("%f", &vp);
+    if (vp<20){
+        vv=vp+(vp*0.45);
+        printf("O valor da venda será de %.2f reais\n", vv);
+    } else{
+        vv=vp+(vp*0.3);
+        printf("O valor da venda será de %.2f reais\n", vv);
+    }
 }
 
 //16. A confederação brasileira de natação irá promover eliminatórias para o próximo
@@ -271,6 +318,27 @@ void questao15() {
 //Juvenil B 14 - 17 anos
 //Sênior maiores de 18 anos
 void questao16() {
+    int id;
+    printf("Digite sua idade: ");
+    scanf("%d", &id);
+    if (id>=5 && id<=7){
+        printf("Infantil A\n");
+    } else {
+        if (id>=8 && id<=10){
+            printf("Infantil B\n"); 
+        } else {
+            if (id>=11 && id<=13){
+                printf("Juvenil A\n");
+            } else {
+                if (id>=14 && id<=17){
+                    printf("Juvenil B\n");
+                } else {
+                    printf("Sênior\n");
+                }
+            }
+        }
+    }
+
 	
 }
 
@@ -389,6 +457,18 @@ int main() {
         case 12:
             questao12();
             break;
+        case 13:
+            questao13();
+            break;
+        case 14:
+            questao14();
+            break;
+        case 15:
+            questao15();
+            break;
+        case 16:
+            questao16();
+            break;        
 		default:
 			printf("Opção inválida!");
 	}
