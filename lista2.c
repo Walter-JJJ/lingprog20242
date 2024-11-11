@@ -333,7 +333,11 @@ void questao16() {
                 if (id>=14 && id<=17){
                     printf("Juvenil B\n");
                 } else {
+                   if (id>=18){
                     printf("Sênior\n");
+                } else {
+                printf("Sem Categoria\n");
+                }
                 }
             }
         }
@@ -351,11 +355,103 @@ void questao16() {
 //Acima de 59 até 65 anos R$250,00
 //Maior que 65 anos R$400,00
 void questao17() {
-	
+    int id=0;
+    char nome[80];
+    printf("Digite seu nome: ");
+    scanf("%s", &nome);
+    printf("Digite sua idade: ");
+    scanf("%d", &id);
+    if (id<10){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$30.00\n");
+    } 
+    if(id>10 && id<=29){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$60.00\n");
+    } 
+    if(id>29 && id<=45){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$120.00\n");
+	} 
+    if(id>45 && id<=59){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$150.00\n");
+    } 
+    if(id>59 && id<=65){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$250.00\n");
+    } 
+    if(id>65){
+        system("clear");
+        printf("%s\n", &nome);
+        printf("Valor: R$400.00\n");
+    } 
 }
+    
+
 
 //18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente. Caso o usuário digite umnúmero fora desse intervalo, deverá aparecer uma mensagem informando que não existe mês com este número. Utilize o switch para este problema.
 void questao18() {
+    int opcao;
+	printf("Digite um número de 1 a 12: ");
+	scanf("%d", &opcao);
+    switch (opcao){
+        case 1:
+            system("clear");
+			printf("1- Janeiro\n");
+			break;
+        case 2:
+            system("clear");
+			printf("2- Fevereiro\n");
+			break;
+        case 3:
+            system("clear");
+			printf("3- Março\n");
+			break;
+        case 4:
+            system("clear");
+			printf("4- Abril\n");
+			break;
+        case 5:
+            system("clear");
+			printf("5- Maio\n");
+			break;
+        case 6:
+            system("clear");
+			printf("6- Junho\n");
+			break;
+        case 7:
+            system("clear");
+			printf("7- Julho\n");
+			break;
+        case 8:
+            system("clear");
+			printf("8- Agosto\n");
+			break;
+        case 9:
+            system("clear");
+			printf("9- Setembro\n");
+			break;
+        case 10:
+            system("clear");
+			printf("10- Outubro\n");
+			break;
+        case 11:
+            system("clear");
+			printf("11- Novembro\n");
+			break;
+        case 12:
+            system("clear");
+			printf("12- Dezembro\n");
+			break;
+        default:
+			printf("Opção inválida!\n");
+    }
 	
 }
 
@@ -364,7 +460,34 @@ void questao18() {
 //• Mostrar esses valores em ordem decrescente;
 //• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles, caso contrário, imprimir a mensagem "Equipe desclassificada".
 void questao19() {
-	
+    float media, j1, j2, j3;
+    printf("Digite os pontos obtidos por cada um dos 3 jogadores: ");
+    scanf("%f%f%f", &j1, &j2, &j3);
+    system("clear");
+    media=(j1+j2+j3)/3;
+    if(j1<j2 && j2<j3){
+        printf("%.2f\n%.2f\n%.2f\n", j3, j2, j1);
+    } 
+    if (j2<j1 && j1<j3){
+         printf("%.2f\n%.2f\n%.2f\n", j3, j1, j2);
+    }
+    if (j1<j3 && j3<j2){
+        printf("%.2f\n%.2f\n%.2f\n", j2, j3, j1);
+    }
+    if (j3<j1 && j1<j2){
+        printf("%.2f\n%.2f\n%.2f\n", j2, j1, j3);
+    }
+    if (j2<j3 && j3<j1){
+        printf("%.2f\n%.2f\n%.2f\n", j1, j3, j2);
+    }
+    if (j3<j2 && j2<j1){
+        printf("%.2f\n%.2f\n%.2f\n", j1, j2, j3);
+    }
+    if (j1+j2+j3>100){
+        printf("Média igual a: %.2f\n", media);
+    } else {
+        printf("Equipe Desclassificada!\n");
+    }
 }
 
 //20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de acordo com o saldomédio no último ano. Faça um programa que leia o saldo médio de um cliente e calcule o valor do crédito de acordo com a tabela a seguir. O programa deve imprimir uma mensagem informando o saldo médio e o valor de crédito.
@@ -374,6 +497,28 @@ void questao19() {
 //de 1001 a 3000 40% do valor do saldo médio
 //acima de 3001 50% do valor do saldo médio
 void questao20() {
+    float saldo, cred;
+    printf("Digite o seu saldo médio: ");
+    scanf("%f", &saldo);
+    system("clear");
+    if (saldo<=500){
+        printf("Sem Crédito!\n");
+    }
+    if (saldo>500 && saldo<=1000){
+        cred=(saldo*0.3);
+        printf("Saldo Médio: %.2f\n", saldo);
+        printf("Crédito concedido: %.2f\n", cred);
+    }
+    if (saldo>1000 && saldo<=3000){
+        cred=(saldo*0.4);
+        printf("Saldo Médio: %.2f\n", saldo);
+        printf("Crédito concedido: %.2f\n", cred);
+    }
+    if (saldo>3000){
+        cred=(saldo*0.5);
+        printf("Saldo Médio: %.2f\n", saldo);
+        printf("Crédito concedido: %.2f\n", cred);
+    }
 	
 }
 
@@ -382,6 +527,7 @@ void questao20() {
 //• Tipo de usuário:
 //• Total de dias:
 void questao21() {
+    
 	
 }
 
@@ -415,7 +561,7 @@ void questao25() {
 }
 
 int main() {
-	const char menu[1000] = "\n================================\n            PROGRAMAS\n================================\n[1]  - Adição\n[2]  - Adição 2\n[3]  - Múltiplo\n[4]  - Múltiplo 2\n[5]  - Múltiplo 3\n[6]  - Crédito\n[7]  - Intervalo\n[8]  - Menor/Maior\n[9]  - Idade\n[10] - Crescente\n[11] - Maior\n[12] - Idade 2\n[13] - Situação Aluno\n[14] - INSS\n[15] - Valor de Venda\n[16] - Natação\n[17] - Plano de Saúde\n[18] - Mês do Ano\n[19] - Arco e Flecha\n[20] - Crédito Especial\n[21] - Biblioteca\n[22] - Consumo Combustível\n[23] - Calorias\n[24] - Emplacamento\n[25] - Intimação\n================================\n";
+	const char menu[10000] = "\n================================\n            PROGRAMAS\n================================\n[1]  - Adição\n[2]  - Adição 2\n[3]  - Múltiplo\n[4]  - Múltiplo 2\n[5]  - Múltiplo 3\n[6]  - Crédito\n[7]  - Intervalo\n[8]  - Menor/Maior\n[9]  - Idade\n[10] - Crescente\n[11] - Maior\n[12] - Idade 2\n[13] - Situação Aluno\n[14] - INSS\n[15] - Valor de Venda\n[16] - Natação\n[17] - Plano de Saúde\n[18] - Mês do Ano\n[19] - Arco e Flecha\n[20] - Crédito Especial\n[21] - Biblioteca\n[22] - Consumo Combustível\n[23] - Calorias\n[24] - Emplacamento\n[25] - Intimação\n================================\n";
 	printf("%s",menu);
 	int opcao;
 	printf("Digite a questão a ser executada: ");
@@ -468,7 +614,19 @@ int main() {
             break;
         case 16:
             questao16();
-            break;        
+            break; 
+        case 17:
+            questao17();
+            break;   
+        case 18:
+            questao18();
+            break;
+        case 19:
+            questao19();
+            break;  
+        case 20:
+            questao20();
+            break;  
 		default:
 			printf("Opção inválida!");
 	}
