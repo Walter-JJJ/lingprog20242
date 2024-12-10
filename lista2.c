@@ -527,13 +527,46 @@ void questao20() {
 //• Tipo de usuário:
 //• Total de dias:
 void questao21() {
+    char livro[30];
+    int usuario;
+    printf("Qual o nome do livro?: ");
+    scanf("%s", &livro);
+    printf("Digite 1 se você for aluno ou 2 se for professor: ");
+    scanf("%d", &usuario);
+    system("clear");
+    if (usuario==1){
+        printf("• Nome do livro: %s\n• Tipo de usuário: Aluno\n• Total de dias: 3\n", livro);
+    }
+    if (usuario==2){
+        printf("• Nome do livro: %s\n• Tipo de usuário: Professor\n• Total de dias: 10\n", livro);
+    }
+    if (usuario!=1 && usuario!=2) {
+        printf("Tipo de usuário inválido\n");
+    }
     
 	
 }
 
-//22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de combustível, sabendo-se que umcarro tipo C faz 12 kmcom umlitro de gasolina, um tipo B faz 9 kme o tipo C, 8 kmpor litro.
+//22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de combustível, sabendo-se que umcarro tipo A faz 12 kmcom um litro de gasolina, um tipo B faz 9 kme o tipo C, 8 km por litro.
 void questao22() {
-	
+    float km, consumo, car;
+    printf("Quantos quilometros?: ");
+    scanf("%f", &km);
+    printf("Digite 1 para carro tipo A, 2 para B ou 3 para C: ");
+    scanf("%f", &car);
+    system("clear");
+    if (car==1){
+        consumo=km/12;
+        printf("Consumo estimado de combustível: %.2f\n", consumo);
+    }
+    if (car==2){
+        consumo=km/9;
+        printf("Consumo estimado de combustível: %.2f\n", consumo);
+    }
+    if (car==3){
+        consumo=km/8;
+        printf("Consumo estimado de combustível: %.2f\n", consumo);
+    }
 }
 
 //23. Crie um programa que informe a quantidade total de calorias de uma refeição a partir da escolha do usuário que deverá informar o prato, a sobremesa, e bebida conforme a tabela a seguir.
@@ -627,6 +660,12 @@ int main() {
         case 20:
             questao20();
             break;  
+        case 21:
+            questao21();
+            break;
+        case 22:
+            questao22();
+            break; 
 		default:
 			printf("Opção inválida!");
 	}
