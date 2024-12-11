@@ -576,7 +576,52 @@ void questao22() {
 //Frango 250cal Mousse diet 170cal Suco de melão 100cal
 //Carne 350cal Mousse chocolate 200cal Refrigerante diet 65cal
 void questao23() {
-
+    int PP, SOB, BEB, pp, sob, beb, calorias;
+    printf("Digite 1 para Vegetariano, 2 para Peixe, 3 para Frango ou 4 para Carne: ");
+    scanf("%d", &PP);
+    if (PP==1){
+        pp=180;
+    }
+    if (PP==2){
+        pp=230;
+    }
+    if (PP==3){
+        pp=250;
+    }
+    if (PP==4){
+        pp=350;
+    }
+    printf("Digite 1 para Abacaxi, 2 para Sorvete Diet, 3 para Mousse Diet ou 4 para Refrigerante Diet: ");
+    scanf("%d", &SOB);
+    if (SOB==1){
+        sob=75;
+    }
+    if (SOB==2){
+        sob=110;
+    }
+    if (SOB==3){
+        sob=170;
+    }
+    if (SOB==4){
+        sob=200;
+    }
+    printf("Digite 1 para Chá, 2 para Sorvete Diet, 3 para Mousse Diet ou 4 para Refrigerante Diet: ");
+    scanf("%d", &BEB);
+    if (BEB==1){
+        beb=20;
+    }
+    if (BEB==2){
+        beb=70;
+    }
+    if (BEB==3){
+        beb=100;
+    }
+    if (BEB==4){
+        beb=65;
+    }
+    system("clear");
+    calorias=(pp+beb+sob);
+    printf("Quantidade tottal de calorias: %d cal\n", calorias);
 }
 
 //24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dosmotoristas o DUT. Sabendo-se que o mês em que o emplacamento do carro deve ser renovado é determinado pelo último número da placa do mesmo, faça um programa que, a partir da leitura da placa do carro, informe omês em que o emplacamento deve ser renovado.
@@ -665,6 +710,9 @@ int main() {
             break;
         case 22:
             questao22();
+            break;
+        case 23:
+            questao23();
             break; 
 		default:
 			printf("Opção inválida!");
