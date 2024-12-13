@@ -241,10 +241,10 @@ void questao12() {
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
 //prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
 void questao13() {
-    char nome[50];
     float nota1, nota2, media;
-    printf("Digite seu nome ");
-    scanf("%s", &nome);
+    char nome[50];
+    printf("Digite seu nome: ");
+    scanf("\n%[^\n]s", &nome);
     printf("Digite a nota da prova 1: ");
     scanf("%f", &nota1);
     printf("Digite a nota da prova 2: ");
@@ -358,37 +358,37 @@ void questao17() {
     int id=0;
     char nome[80];
     printf("Digite seu nome: ");
-    scanf("%s", &nome);
+    scanf("\n%[^\n]s", &nome);
     printf("Digite sua idade: ");
     scanf("%d", &id);
     if (id<10){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$30.00\n");
     } 
     if(id>10 && id<=29){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$60.00\n");
     } 
     if(id>29 && id<=45){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$120.00\n");
 	} 
     if(id>45 && id<=59){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$150.00\n");
     } 
     if(id>59 && id<=65){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$250.00\n");
     } 
     if(id>65){
         system("clear");
-        printf("%s\n", &nome);
+        printf("%s\n", nome);
         printf("Valor: R$400.00\n");
     } 
 }
@@ -530,7 +530,7 @@ void questao21() {
     char livro[30];
     int usuario;
     printf("Qual o nome do livro?: ");
-    scanf("%s", &livro);
+    scanf("\n%[^\n]s", &livro);
     printf("Digite 1 se você for aluno ou 2 se for professor: ");
     scanf("%d", &usuario);
     system("clear");
@@ -626,7 +626,17 @@ void questao23() {
 
 //24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dosmotoristas o DUT. Sabendo-se que o mês em que o emplacamento do carro deve ser renovado é determinado pelo último número da placa do mesmo, faça um programa que, a partir da leitura da placa do carro, informe omês em que o emplacamento deve ser renovado.
 void questao24() {
-	
+    int placa, milhar, centena, dezena;
+    printf("Digite o numero da placa do carro no formato <9999>: ");
+    scanf("%d", &placa);
+    milhar = placa / 1000;
+    placa = placa - (milhar * 1000);
+    centena = placa / 100;
+    placa = placa - (centena * 100);
+    dezena = placa / 10;
+    placa = placa - (dezena * 10);
+    printf("Mes: %d\n", placa);
+
 }
 
 //25. A prefeitura contratou uma firma especializada para manter os níveis de poluição considerados ideais para umpaís do 1º mundo. As indústrias, maiores responsáveis pela poluição, foram classificadas em três grupos. Sabendo-se que a escala utilizada varia de 0,05 e que o índice de poluição aceitável é até 0,25, fazer um programa que possa imprimir intimações de acordo com o índice e a tabela a seguir:
@@ -635,7 +645,21 @@ void questao24() {
 //0,4 1º e 2º grupos
 //0,5 1º, 2º e 3º grupos
 void questao25() {
-	
+    float indice;
+    printf("Digite o indice de poluicao: \n");
+    scanf("%f", &indice);
+    if (indice >= 0.5) {
+     printf("Suspender atividades das industrias dos grupos 1, 2 e 3 \n");
+     }
+    else if (indice >= 0.4) {
+     printf("Suspender atividades das industrias dos grupos 1 e 2 \n");
+     }
+    else if (indice >= 0.3) {
+     printf("Suspender atividades das industrias do grupo 1 \n");
+     }
+    else {
+     printf("Indice de poluicao aceitavel para todos os grupos \n");
+     }
 }
 
 int main() {
@@ -713,7 +737,13 @@ int main() {
             break;
         case 23:
             questao23();
+            break;
+        case 24:
+            questao24();
             break; 
+        case 25:
+            questao25();
+            break;
 		default:
 			printf("Opção inválida!");
 	}
